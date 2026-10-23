@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import VantaBackground from '@/components/VantaBackground';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
@@ -12,7 +13,10 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen selection:bg-[#38bdf8] selection:text-[#070e1b]">
+    <main className="min-h-screen selection:bg-[#38bdf8] selection:text-[#070e1b] relative">
+      {/* 3D Animated Clouds Background */}
+      <VantaBackground />
+
       {/* Sticky Floating Navigation */}
       <Navbar />
 

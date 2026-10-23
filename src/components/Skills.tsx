@@ -101,7 +101,7 @@ export default function Skills() {
     : SKILLS_DATA.filter((s) => s.category === selectedCategory);
 
   return (
-    <section id="skills" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F5F9FF] via-[#E3EEFF]/30 to-[#F5F9FF] overflow-hidden">
+    <section id="skills" className="py-20 md:py-28 relative overflow-hidden">
       {/* Soft Ambient Aurora Gradient Background Pattern */}
       <div
         className="absolute top-10 right-0 w-[420px] h-[420px] rounded-full bg-[radial-gradient(circle,rgba(186,230,253,0.35)_0%,rgba(224,242,254,0.15)_45%,transparent_70%)] -z-0 pointer-events-none"
@@ -140,14 +140,14 @@ export default function Skills() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   isSelected
-                    ? 'bg-[#070e1b] text-white shadow-md shadow-[#070e1b]/20 transform -translate-y-0.5'
-                    : 'bg-white/90 text-[#475569] hover:text-[#070e1b] hover:bg-[#e0f2fe] border border-[#bae6fd]'
+                    ? 'btn-primary text-white shadow-md shadow-[#0284c7]/35 transform -translate-y-0.5'
+                    : 'bg-white/80 backdrop-blur-md text-[#1e293b] hover:text-[#0284c7] hover:bg-white border border-white/80 shadow-xs'
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-[#38bdf8]' : 'text-[#0284c7]'}`} />
+                <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-white' : 'text-[#0284c7]'}`} />
                 <span>{cat.label}</span>
                 {isSelected && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-white" />
                 )}
               </button>
             );
@@ -168,10 +168,10 @@ export default function Skills() {
               <div className="relative z-10 flex flex-col gap-3">
                 {/* Top row: Icon and Category Badge */}
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#e0f2fe] to-[#bae6fd]/50 border border-[#bae6fd] flex items-center justify-center text-[#070e1b] group-hover:scale-110 transition-transform shadow-xs">
+                  <div className="w-12 h-12 rounded-xl bg-white/85 border border-white/80 flex items-center justify-center text-[#070e1b] group-hover:scale-110 transition-transform shadow-xs">
                     <TechIcon iconName={skill.iconName} className="w-6 h-6 text-[#070e1b]" />
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-[#e0f2fe] text-[#0369a1] border border-[#bae6fd]">
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-white/85 text-[#0284c7] border border-[#bae6fd]">
                     {skill.category}
                   </span>
                 </div>
@@ -186,16 +186,16 @@ export default function Skills() {
 
                 {/* Skill Description */}
                 {skill.description && (
-                  <p className="text-xs sm:text-sm text-[#475569] font-body leading-relaxed line-clamp-2">
+                  <p className="text-xs sm:text-sm text-[#334155] font-body leading-relaxed line-clamp-2 font-medium">
                     {skill.description}
                   </p>
                 )}
               </div>
 
               {/* Bottom Doc Link Indicator */}
-              <div className="relative z-10 mt-5 pt-3 border-t border-[#A8C7FA]/20 flex items-center justify-between text-[11px] font-semibold text-[#6F8099] group-hover:text-[#315A91]">
+              <div className="relative z-10 mt-5 pt-3 border-t border-[#bae6fd]/40 flex items-center justify-between text-[11px] font-bold text-[#0284c7]">
                 <span>View Documentation</span>
-                <span className="font-mono text-xs text-[#6B9FE8] group-hover:translate-x-1 transition-transform">↗</span>
+                <span className="font-mono text-xs text-[#0ea5e9] group-hover:translate-x-1 transition-transform">↗</span>
               </div>
             </a>
           ))}

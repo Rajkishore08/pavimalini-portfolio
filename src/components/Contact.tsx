@@ -299,9 +299,9 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Alex Morgan"
-                    className={`w-full px-4 py-3 rounded-xl bg-[#f0f9ff] border ${
+                    className={`w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-md border ${
                       errors.name ? 'border-rose-400 focus:ring-rose-300' : 'border-[#bae6fd] focus:border-[#0284c7]'
-                    } text-[#070e1b] placeholder-[#64748b]/60 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all font-body`}
+                    } text-[#070e1b] placeholder-[#64748b]/70 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 focus:bg-white transition-all font-body font-medium`}
                   />
                   {errors.name && (
                     <p className="text-xs text-rose-500 mt-1">{errors.name}</p>
@@ -319,9 +319,9 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="e.g. alex@company.com"
-                    className={`w-full px-4 py-3 rounded-xl bg-[#f0f9ff] border ${
+                    className={`w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-md border ${
                       errors.email ? 'border-rose-400 focus:ring-rose-300' : 'border-[#bae6fd] focus:border-[#0284c7]'
-                    } text-[#070e1b] placeholder-[#64748b]/60 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all font-body`}
+                    } text-[#070e1b] placeholder-[#64748b]/70 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 focus:bg-white transition-all font-body font-medium`}
                   />
                   {errors.email && (
                     <p className="text-xs text-rose-500 mt-1">{errors.email}</p>
@@ -339,9 +339,9 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     placeholder="e.g. Software Engineering Opportunity / Collaboration"
-                    className={`w-full px-4 py-3 rounded-xl bg-[#f0f9ff] border ${
+                    className={`w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-md border ${
                       errors.subject ? 'border-rose-400 focus:ring-rose-300' : 'border-[#bae6fd] focus:border-[#0284c7]'
-                    } text-[#070e1b] placeholder-[#64748b]/60 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all font-body`}
+                    } text-[#070e1b] placeholder-[#64748b]/70 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 focus:bg-white transition-all font-body font-medium`}
                   />
                   {errors.subject && (
                     <p className="text-xs text-rose-500 mt-1">{errors.subject}</p>
@@ -359,9 +359,9 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell me about your project, idea, or role..."
-                    className={`w-full px-4 py-3 rounded-xl bg-[#f0f9ff] border ${
+                    className={`w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-md border ${
                       errors.message ? 'border-rose-400 focus:ring-rose-300' : 'border-[#bae6fd] focus:border-[#0284c7]'
-                    } text-[#070e1b] placeholder-[#64748b]/60 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all resize-none font-body`}
+                    } text-[#070e1b] placeholder-[#64748b]/70 text-sm focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 focus:bg-white transition-all resize-none font-body font-medium`}
                   />
                   {errors.message && (
                     <p className="text-xs text-rose-500 mt-1">{errors.message}</p>

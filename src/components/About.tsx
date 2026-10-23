@@ -35,10 +35,10 @@ export default function About() {
           {/* Left Column: Narrative & Pillars (7 cols) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="frosted-card p-6 sm:p-8 rounded-3xl flex flex-col gap-5 text-left">
-              <p className="text-base sm:text-lg text-[#070e1b] font-body leading-relaxed">
+              <p className="text-base sm:text-lg text-[#070e1b] font-body leading-relaxed font-medium">
                 {PERSONAL_INFO.about.paragraph1}
               </p>
-              <p className="text-base sm:text-lg text-[#475569] font-body leading-relaxed">
+              <p className="text-base sm:text-lg text-[#1e293b] font-body leading-relaxed">
                 {PERSONAL_INFO.about.paragraph2}
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function About() {
                   key={pillar.title}
                   className="frosted-card p-5 rounded-2xl flex flex-col gap-2.5 text-left group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#e0f2fe] text-[#0284c7] flex items-center justify-center border border-[#bae6fd] group-hover:scale-105 transition-transform shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-white/85 text-[#0284c7] flex items-center justify-center border border-white/80 group-hover:scale-105 transition-transform shadow-xs">
                     {idx === 0 && <Layers className="w-5 h-5 text-[#0284c7]" />}
                     {idx === 1 && <Palette className="w-5 h-5 text-[#0ea5e9]" />}
                     {idx === 2 && <Sparkles className="w-5 h-5 text-[#0284c7]" />}
@@ -58,7 +58,7 @@ export default function About() {
                   <h3 className="font-display font-bold text-sm sm:text-base text-[#070e1b] group-hover:text-[#0284c7] transition-colors">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs text-[#475569] font-body leading-relaxed">
+                  <p className="text-xs text-[#334155] font-body leading-relaxed font-medium">
                     {pillar.desc}
                   </p>
                 </div>

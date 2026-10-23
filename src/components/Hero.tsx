@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-mesh-soft bg-grid-pattern"
+      className="relative min-h-[92vh] pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-grid-pattern"
     >
       {/* Ambient Sky Blue Radial Glows in Background (Hardware-accelerated) */}
       <div
@@ -61,8 +61,8 @@ export default function Hero() {
               digital products.
             </h1>
 
-            {/* Subheading */}
-            <p className="text-base sm:text-lg lg:text-xl text-[#475569] leading-relaxed max-w-2xl mb-8 font-normal font-body">
+            {/* Subheading with high-contrast readable navy */}
+            <p className="text-base sm:text-lg lg:text-xl text-[#1e293b] font-medium leading-relaxed max-w-2xl mb-8 font-body">
               {PERSONAL_INFO.hero.subheading}
             </p>
 
@@ -71,7 +71,7 @@ export default function Hero() {
               {PERSONAL_INFO.identities.map((identity, idx) => (
                 <div
                   key={identity}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#e0f2fe]/90 text-[#070e1b] border border-[#bae6fd] shadow-2xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/85 backdrop-blur-md text-[#070e1b] border border-white/80 shadow-xs"
                 >
                   {idx === 0 && <Layers className="w-3.5 h-3.5 text-[#0284c7]" />}
                   {idx === 1 && <Palette className="w-3.5 h-3.5 text-[#0ea5e9]" />}
@@ -97,7 +97,7 @@ export default function Hero() {
               <a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, 'contact')}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-[#070e1b] bg-white/95 hover:bg-[#e0f2fe] border border-[#bae6fd] shadow-xs hover:border-[#0284c7] transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                className="btn-secondary inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm sm:text-base cursor-pointer"
               >
                 <span>Let&apos;s Connect</span>
                 <ArrowUpRight className="w-4 h-4 text-[#0284c7]" />
@@ -108,7 +108,7 @@ export default function Hero() {
                 href={PERSONAL_INFO.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl font-semibold text-sm text-[#0369a1] hover:text-[#070e1b] bg-[#e0f2fe]/80 hover:bg-[#e0f2fe] border border-[#bae6fd] transition-all shadow-xs"
+                className="btn-secondary inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl font-semibold text-sm cursor-pointer"
                 title="View Pavimalini's resume PDF in new tab"
               >
                 <FileText className="w-4 h-4 text-[#0284c7]" />

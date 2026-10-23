@@ -122,7 +122,7 @@ export default function Navbar() {
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-1 lg:gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#bae6fd]/60 shadow-sm"
+            className="hidden md:flex items-center gap-1 lg:gap-2 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-xl border border-white/70 shadow-sm"
           >
             {navItems.map((item) => {
               const isActive = activeSection === item.href.replace('#', '');
@@ -131,10 +131,10 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`relative px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-all duration-200 ${
+                  className={`relative px-3.5 py-1.5 rounded-full text-xs lg:text-sm transition-all duration-200 ${
                     isActive
-                      ? 'text-[#0284c7] font-semibold bg-[#e0f2fe] shadow-xs'
-                      : 'text-[#475569] hover:text-[#0b192c] hover:bg-[#f0f9ff]'
+                      ? 'text-[#0284c7] font-bold bg-[#e0f2fe]/90 border border-[#bae6fd] shadow-xs'
+                      : 'text-[#1e293b] font-medium hover:text-[#0284c7] hover:bg-white/80'
                   }`}
                 >
                   {item.name}
@@ -152,7 +152,7 @@ export default function Navbar() {
               href={PERSONAL_INFO.resumePath}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0369a1] hover:text-[#0b192c] bg-[#e0f2fe]/80 hover:bg-[#e0f2fe] border border-[#bae6fd] transition-all shadow-xs"
+              className="btn-secondary inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold cursor-pointer"
               title="View Resume in new tab"
             >
               <FileText className="w-3.5 h-3.5 text-[#0284c7]" />
@@ -162,7 +162,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="btn-primary group inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold"
+              className="btn-primary group inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold cursor-pointer"
             >
               <span>Let&apos;s Connect</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

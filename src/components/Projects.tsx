@@ -85,7 +85,7 @@ export default function Projects() {
                 </p>
 
                 {/* Project Description */}
-                <p className="text-sm text-[#475569] leading-relaxed mb-6 font-body line-clamp-3">
+                <p className="text-sm text-[#1e293b] leading-relaxed mb-6 font-body line-clamp-3 font-medium">
                   {project.description}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function Projects() {
                   {project.toolsUsed.map((tool) => (
                     <span
                       key={tool}
-                      className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-[#e0f2fe] text-[#070e1b] border border-[#bae6fd]"
+                      className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white/85 text-[#070e1b] border border-white/80 shadow-2xs"
                     >
                       {tool}
                     </span>
@@ -109,7 +109,7 @@ export default function Projects() {
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
 
-                  <span className="text-[11px] font-mono text-[#64748b]">Interactive View</span>
+                  <span className="text-[11px] font-mono text-[#0369a1] font-bold">Interactive View</span>
                 </div>
               </div>
             </div>
