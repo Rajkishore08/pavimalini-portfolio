@@ -85,7 +85,9 @@ export const PERSONAL_INFO = {
   email: "tpavimalini@gmail.com",
   phone: "+91 9344831541",
   cleanPhone: "+919344831541",
-  resumePath: "/resume.pdf",
+  resumePath: "https://drive.google.com/file/d/1w3_cPRsprfsPFBhoUUSSuu_ibNRlsqZf/view?usp=sharing",
+  resumeDriveUrl: "https://drive.google.com/file/d/1w3_cPRsprfsPFBhoUUSSuu_ibNRlsqZf/view?usp=sharing",
+  resumePdfPath: "/resume.pdf",
   profileImage: "/images/pavimalini.jpg",
   availabilityStatus: "Open to Opportunities",
   identities: [
