@@ -1,0 +1,5 @@
+# Robots.txt for Pavimalini T Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://pavimalini.dev/sitemap.xml
