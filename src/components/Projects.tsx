@@ -4,8 +4,25 @@ import React, { useState } from 'react';
 import { FEATURED_PROJECTS, ProjectItem } from '@/data/portfolioData';
 import { ArrowUpRight, Sparkles, Info } from 'lucide-react';
 import ProjectMockupDashboard from './ProjectMockupDashboard';
-import ProjectMockupAutoRAG from './ProjectMockupAutoRAG';
+import ProjectMockupCityTwin from './ProjectMockupCityTwin';
+import ProjectMockupAcademic from './ProjectMockupAcademic';
+import ProjectMockupPrivasec from './ProjectMockupPrivasec';
 import ProjectModal from './ProjectModal';
+
+export const renderProjectMockup = (projectId: string) => {
+  switch (projectId) {
+    case 'techno-tenant':
+      return <ProjectMockupDashboard />;
+    case 'city-twin':
+      return <ProjectMockupCityTwin />;
+    case 'student-academic-analytics':
+      return <ProjectMockupAcademic />;
+    case 'privasec':
+      return <ProjectMockupPrivasec />;
+    default:
+      return <ProjectMockupDashboard />;
+  }
+};
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -50,11 +67,7 @@ export default function Projects() {
                 {/* Visual Preview Container */}
                 <div className="relative w-full rounded-2xl overflow-hidden border border-[#bae6fd] bg-[#f0f9ff] group-hover:border-[#38bdf8] transition-colors duration-300 mb-6">
                   <div className="transform group-hover:scale-[1.02] transition-transform duration-500 ease-out">
-                    {project.id === 'techno-tenant' ? (
-                      <ProjectMockupDashboard />
-                    ) : (
-                      <ProjectMockupAutoRAG />
-                    )}
+                    {renderProjectMockup(project.id)}
                   </div>
                   
                   {/* Subtle Badge on Mockup */}

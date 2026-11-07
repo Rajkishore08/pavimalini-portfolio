@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SKILLS_DATA } from '@/data/portfolioData';
-import { ExternalLink, Sparkles, Code, Layers, Database, Wrench } from 'lucide-react';
+import { SKILLS_DATA, AREAS_OF_INTEREST } from '@/data/portfolioData';
+import { ExternalLink, Sparkles, Code, Layers, Database, Wrench, Brain } from 'lucide-react';
 
 // Tech SVG Icons for recognizable visual flair
 const TechIcon = ({ iconName, className = "w-6 h-6" }: { iconName: string; className?: string }) => {
@@ -10,22 +10,32 @@ const TechIcon = ({ iconName, className = "w-6 h-6" }: { iconName: string; class
     case 'python':
       return (
         <svg viewBox="0 0 24 24" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 6 4.38 6 4.38L6.01 6.84H12.16V7.74H3.6C3.6 7.74 2 7.54 2 12C2 16.46 3.4 16.26 3.4 16.26H5.2V13.8C5.2 13.8 5.1 11.4 7.6 11.4H13.7V9.6C13.7 9.6 13.8 6.84 10.3 6.84H12V2ZM9.5 4.1C10.05 4.1 10.5 4.55 10.5 5.1C10.5 5.65 10.05 6.1 9.5 6.1C8.95 6.1 8.5 5.65 8.5 5.1C8.5 4.55 8.95 4.1 9.5 4.1Z" fill="#315A91" />
-          <path d="M12 22C17.52 22 18 19.62 18 19.62L17.99 17.16H11.84V16.26H20.4C20.4 16.26 22 16.46 22 12C22 7.54 20.6 7.74 20.6 7.74H18.8V10.2C18.8 10.2 18.9 12.6 16.4 12.6H10.3V14.4C10.3 14.4 10.2 17.16 13.7 17.16H12V22ZM14.5 19.9C13.95 19.9 13.5 19.45 13.5 18.9C13.5 18.35 13.95 17.9 14.5 17.9C15.05 17.9 15.5 18.35 15.5 18.9C15.5 19.45 15.05 19.9 14.5 19.9Z" fill="#6B9FE8" />
+          <path d="M12 2C6.48 2 6 4.38 6 4.38L6.01 6.84H12.16V7.74H3.6C3.6 7.74 2 7.54 2 12C2 16.46 3.4 16.26 3.4 16.26H5.2V13.8C5.2 13.8 5.1 11.4 7.6 11.4H13.7V9.6C13.7 9.6 13.8 6.84 10.3 6.84H12V2ZM9.5 4.1C10.05 4.1 10.5 4.55 10.5 5.1C10.5 5.65 10.05 6.1 9.5 6.1C8.95 6.1 8.5 5.65 8.5 5.1C8.5 4.55 8.95 4.1 9.5 4.1Z" fill="#0284c7" />
+          <path d="M12 22C17.52 22 18 19.62 18 19.62L17.99 17.16H11.84V16.26H20.4C20.4 16.26 22 16.46 22 12C22 7.54 20.6 7.74 20.6 7.74H18.8V10.2C18.8 10.2 18.9 12.6 16.4 12.6H10.3V14.4C10.3 14.4 10.2 17.16 13.7 17.16H12V22ZM14.5 19.9C13.95 19.9 13.5 19.45 13.5 18.9C13.5 18.35 13.95 17.9 14.5 17.9C15.05 17.9 15.5 18.35 15.5 18.9C15.5 19.45 15.05 19.9 14.5 19.9Z" fill="#38bdf8" />
+        </svg>
+      );
+    case 'cpp':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M11 6.5C7.96 6.5 5.5 8.96 5.5 12C5.5 15.04 7.96 17.5 11 17.5C12.7 17.5 14.2 16.7 15.2 15.5" />
+          <path d="M16 10v4" stroke="#0ea5e9" strokeWidth="2" />
+          <path d="M14 12h4" stroke="#0ea5e9" strokeWidth="2" />
+          <path d="M21 10v4" stroke="#38bdf8" strokeWidth="2" />
+          <path d="M19 12h4" stroke="#38bdf8" strokeWidth="2" />
         </svg>
       );
     case 'react':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#6B9FE8" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#0ea5e9" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
           <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)" />
           <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
           <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
-          <circle cx="12" cy="12" r="1.8" fill="#315A91" />
+          <circle cx="12" cy="12" r="1.8" fill="#0284c7" />
         </svg>
       );
     case 'nodejs':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#315A91" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2L3 7.5V16.5L12 22L21 16.5V7.5L12 2Z" />
           <path d="M12 22V12" />
           <path d="M21 7.5L12 12L3 7.5" />
@@ -33,16 +43,22 @@ const TechIcon = ({ iconName, className = "w-6 h-6" }: { iconName: string; class
       );
     case 'express':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#172C4D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#070e1b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 12h16" />
           <path d="M12 4l8 8-8 8" />
-          <circle cx="8" cy="8" r="1.5" fill="#315A91" />
-          <circle cx="8" cy="16" r="1.5" fill="#6B9FE8" />
+          <circle cx="8" cy="8" r="1.5" fill="#0284c7" />
+          <circle cx="8" cy="16" r="1.5" fill="#38bdf8" />
+        </svg>
+      );
+    case 'fastapi':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#0ea5e9" stroke="#0284c7" />
         </svg>
       );
     case 'mysql':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#315A91" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <ellipse cx="12" cy="5" rx="8" ry="3" />
           <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
           <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
@@ -51,12 +67,20 @@ const TechIcon = ({ iconName, className = "w-6 h-6" }: { iconName: string; class
     case 'supabase':
       return (
         <svg viewBox="0 0 24 24" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.2 2.5L3.8 13.9C3.3 14.5 3.7 15.5 4.6 15.5H11.2V21.5L20.2 10.1C20.7 9.5 20.3 8.5 19.4 8.5H13.2V2.5Z" fill="#315A91" stroke="#6B9FE8" strokeWidth="1.2" />
+          <path d="M13.2 2.5L3.8 13.9C3.3 14.5 3.7 15.5 4.6 15.5H11.2V21.5L20.2 10.1C20.7 9.5 20.3 8.5 19.4 8.5H13.2V2.5Z" fill="#0284c7" stroke="#38bdf8" strokeWidth="1.2" />
+        </svg>
+      );
+    case 'powerbi':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <rect x="4" y="13" width="3.5" height="8" rx="1" fill="#f59e0b" />
+          <rect x="10.25" y="8" width="3.5" height="13" rx="1" fill="#eab308" />
+          <rect x="16.5" y="3" width="3.5" height="18" rx="1" fill="#d97706" />
         </svg>
       );
     case 'git':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#315A91" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="6" cy="6" r="2.5" />
           <circle cx="6" cy="18" r="2.5" />
           <circle cx="18" cy="9" r="2.5" />
@@ -72,12 +96,12 @@ const TechIcon = ({ iconName, className = "w-6 h-6" }: { iconName: string; class
       );
     case 'figma':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#315A91" strokeWidth="1.8">
-          <circle cx="16" cy="12" r="3" fill="#6B9FE8" />
-          <path d="M8 3h4v6H8a3 3 0 0 1 0-6z" fill="#315A91" />
-          <path d="M12 3h4a3 3 0 0 1 0 6h-4V3z" fill="#6B9FE8" />
-          <path d="M8 9h4v6H8a3 3 0 0 1 0-6z" fill="#A8C7FA" />
-          <path d="M8 15h4v3a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 2-2.8z" fill="#315A91" />
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="#0284c7" strokeWidth="1.8">
+          <circle cx="16" cy="12" r="3" fill="#38bdf8" />
+          <path d="M8 3h4v6H8a3 3 0 0 1 0-6z" fill="#0284c7" />
+          <path d="M12 3h4a3 3 0 0 1 0 6h-4V3z" fill="#0ea5e9" />
+          <path d="M8 9h4v6H8a3 3 0 0 1 0-6z" fill="#7dd3fc" />
+          <path d="M8 15h4v3a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 2-2.8z" fill="#0284c7" />
         </svg>
       );
     default:
@@ -124,7 +148,7 @@ export default function Skills() {
             Skills &amp; Technologies
           </h2>
           <p className="mt-3 text-base sm:text-lg text-[#475569] max-w-2xl font-normal font-body leading-relaxed">
-            Core programming languages, application frameworks, modern databases, and collaborative design tools from the verified resume.
+            Core programming languages, modern frameworks, database management systems, and industry-standard design tools.
           </p>
         </div>
 
@@ -201,10 +225,55 @@ export default function Skills() {
           ))}
         </div>
 
+        {/* Areas of Interest Section from Resume */}
+        <div className="mt-16 pt-12 border-t border-[#bae6fd]/50">
+          <div className="flex flex-col items-start mb-8 text-left">
+            <div className="section-overline inline-flex items-center gap-2 px-3 py-1 rounded-full mb-2 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#0284c7]" />
+              <span>Core Specializations</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#070e1b] font-display tracking-tight">
+              Areas of Interest
+            </h3>
+            <p className="mt-2 text-sm sm:text-base text-[#475569] max-w-2xl font-normal font-body">
+              Specialized research domains, product development innovations, and engineering focuses from the official resume.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {AREAS_OF_INTEREST.map((area) => (
+              <div
+                key={area.id}
+                className="frosted-card p-5 rounded-2xl flex flex-col justify-between text-left group"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e0f2fe] to-[#bae6fd]/50 border border-[#bae6fd] flex items-center justify-center text-[#0284c7] mb-3 group-hover:scale-110 transition-transform shadow-xs">
+                    {area.icon === 'Layers' && <Layers className="w-5 h-5" />}
+                    {area.icon === 'Brain' && <Brain className="w-5 h-5" />}
+                    {area.icon === 'Sparkles' && <Sparkles className="w-5 h-5" />}
+                    {area.icon === 'Database' && <Database className="w-5 h-5" />}
+                  </div>
+                  <h4 className="font-display font-bold text-base text-[#070e1b] group-hover:text-[#0284c7] transition-colors mb-2">
+                    {area.title}
+                  </h4>
+                  <p className="text-xs text-[#334155] font-body leading-relaxed font-medium">
+                    {area.description}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-[#bae6fd]/40 flex items-center justify-between text-[10px] font-mono font-bold text-[#0284c7]">
+                  <span>Focus Area</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0ea5e9]" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Notice strictly adhering to resume */}
         <div className="mt-10 p-4 rounded-xl bg-[#E3EEFF]/50 border border-[#A8C7FA]/40 max-w-xl text-left flex items-center gap-3">
-          <div className="w-2 h-2 rounded-full bg-[#6B9FE8] shrink-0" />
-          <p className="text-xs text-[#315A91] font-medium">
+          <div className="w-2 h-2 rounded-full bg-[#0284c7] shrink-0" />
+          <p className="text-xs text-[#0369a1] font-medium">
             Strictly curated according to verified proficiencies in core programming, full-stack systems, relational/BaaS persistence, and design systems.
           </p>
         </div>

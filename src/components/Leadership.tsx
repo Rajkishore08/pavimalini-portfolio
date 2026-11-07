@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { LEADERSHIP_POSITIONS } from '@/data/portfolioData';
-import { Users, Calendar, Sparkles, Palette, HeartHandshake } from 'lucide-react';
+import { Users, Calendar, Sparkles, Palette, HeartHandshake, Compass } from 'lucide-react';
 
 export default function Leadership() {
   const getRoleIcon = (index: number) => {
@@ -12,8 +12,24 @@ export default function Leadership() {
       case 1:
         return <Palette className="w-5 h-5 text-[#0ea5e9]" />;
       case 2:
-      default:
         return <Sparkles className="w-5 h-5 text-[#0284c7]" />;
+      case 3:
+      default:
+        return <Compass className="w-5 h-5 text-[#0ea5e9]" />;
+    }
+  };
+
+  const getRoleTag = (index: number) => {
+    switch (index) {
+      case 0:
+        return 'Executive Leadership';
+      case 1:
+        return 'Creative Direction';
+      case 2:
+        return 'Visual Storyboarding';
+      case 3:
+      default:
+        return 'Cultural & Creative Lead';
     }
   };
 
@@ -34,19 +50,19 @@ export default function Leadership() {
             <span>Community &amp; Culture</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#070e1b] font-display tracking-tight">
-            Beyond the Code
+            Positions of Responsibility
           </h2>
           <p className="mt-3 text-base sm:text-lg text-[#475569] max-w-2xl font-normal font-body leading-relaxed">
-            Driving technical leadership, product design directions, and collaborative developer initiatives at CIT.
+            Driving technical leadership, product design directions, and student developer initiatives across campus clubs.
           </p>
         </div>
 
-        {/* 3 Positions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* 4 Positions Grid (1 col on mobile, 2 on tablet, 4 on desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {LEADERSHIP_POSITIONS.map((pos, index) => (
             <div
               key={pos.id}
-              className="frosted-card group p-6 sm:p-7 rounded-3xl flex flex-col justify-between text-left"
+              className="frosted-card group p-6 rounded-3xl flex flex-col justify-between text-left"
             >
               <div>
                 {/* Top Row: Icon & Period */}
@@ -54,14 +70,14 @@ export default function Leadership() {
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#e0f2fe] to-[#bae6fd]/50 border border-[#bae6fd] flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
                     {getRoleIcon(index)}
                   </div>
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#f0f9ff] text-[#070e1b] border border-[#bae6fd]">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-[#f0f9ff] text-[#070e1b] border border-[#bae6fd]">
                     <Calendar className="w-3 h-3 text-[#0284c7]" />
                     <span>{pos.duration}</span>
                   </div>
                 </div>
 
                 {/* Role Position */}
-                <h3 className="text-xl font-extrabold text-[#070e1b] font-display group-hover:text-[#0284c7] transition-colors mb-1">
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#070e1b] font-display group-hover:text-[#0284c7] transition-colors mb-1">
                   {pos.position}
                 </h3>
 
@@ -78,11 +94,7 @@ export default function Leadership() {
 
               {/* Bottom Identity Tag */}
               <div className="pt-4 border-t border-[#bae6fd]/50 flex items-center justify-between text-[11px] font-mono font-semibold text-[#0284c7]">
-                <span>
-                  {index === 0 && 'Executive Leadership'}
-                  {index === 1 && 'Creative Direction'}
-                  {index === 2 && 'Visual Storyboarding'}
-                </span>
+                <span>{getRoleTag(index)}</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0ea5e9]" />
               </div>
 

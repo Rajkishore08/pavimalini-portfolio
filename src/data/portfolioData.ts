@@ -11,6 +11,13 @@ export interface SkillItem {
   iconName: string;
 }
 
+export interface AreaOfInterestItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export interface ExperienceItem {
   id: string;
   company: string;
@@ -65,14 +72,18 @@ export interface LeadershipItem {
   focus: string;
 }
 
-// Configurable Links (as required: placeholders clearly configurable, no invented URLs)
+// Configurable Links
 export const CONFIG = {
-  LINKEDIN_URL: "https://linkedin.com/in/pavimalini-t", // Configurable placeholder
-  GITHUB_URL: "https://github.com/pavimalini-t",       // Configurable placeholder
-  TECHNO_TENANT_GITHUB: "",                            // Placeholder as required
-  TECHNO_TENANT_DEMO: "",                              // Placeholder as required
-  ADAPTIVE_VEHICLE_GUIDE_GITHUB: "",                   // Placeholder as required
-  ADAPTIVE_VEHICLE_GUIDE_DEMO: "",                     // Placeholder as required
+  LINKEDIN_URL: "https://linkedin.com/in/pavimalini-t",
+  GITHUB_URL: "https://github.com/pavimalini-t",
+  TECHNO_TENANT_GITHUB: "",
+  TECHNO_TENANT_DEMO: "",
+  CITY_TWIN_GITHUB: "",
+  CITY_TWIN_DEMO: "",
+  STUDENT_ANALYTICS_GITHUB: "",
+  STUDENT_ANALYTICS_DEMO: "",
+  PRIVASEC_GITHUB: "",
+  PRIVASEC_DEMO: "",
 };
 
 export const PERSONAL_INFO = {
@@ -91,39 +102,39 @@ export const PERSONAL_INFO = {
   profileImage: "/images/pavimalini.jpg",
   availabilityStatus: "Open to Opportunities",
   identities: [
-    "Full Stack Developer",
+    "AI & Full-Stack Developer",
     "Product Designer",
-    "Creative Problem Solver"
+    "Product Innovation & Research"
   ],
   hero: {
     eyebrow: "HELLO, I'M PAVIMALINI",
     headingMain: "Designing experiences.",
-    headingHighlight: "Building meaningful",
-    headingEnd: "digital products.",
+    headingHighlight: "Building intelligent",
+    headingEnd: "digital solutions.",
     subheading:
-      "I'm Pavimalini T, an MSc Software Systems student passionate about full-stack development, product design, and solving real-world problems through technology."
+      "AI and Full-Stack Developer with hands-on experience in building web applications, AI-powered solutions, and scalable software products using React, TypeScript, Node.js, and Firebase. Experienced in end-to-end product development, rapid prototyping, and integrating AI into practical applications."
   },
   about: {
     title: "A little about me",
-    subtitle: "Engineering scalable code with refined product aesthetics",
+    subtitle: "AI and Full-Stack Developer passionate about research, product innovation, and real-world solutions",
     paragraph1:
-      "I'm an enthusiastic MSc Software Systems student with a passion for full-stack development and product design. I enjoy working with core programming fundamentals, exploring new technologies, and solving real-world problems through thoughtful digital experiences.",
+      "AI and Full-Stack Developer with hands-on experience in building web applications, AI-powered solutions, and scalable software products using React, TypeScript, Node.js, and Firebase. Experienced in end-to-end product development, rapid prototyping, and integrating AI into practical applications.",
     paragraph2:
-      "My interests lie at the intersection of software engineering, product thinking, and user experience. I enjoy transforming ideas into functional, intuitive, and visually appealing applications.",
+      "Passionate about research, emerging technologies, product innovation, and building solutions that address real-world problems. Currently pursuing MSc Software Systems [Integrated] at Coimbatore Institute of Technology with an 8.16 CGPA.",
     pillars: [
       {
-        title: "Full Stack Developer",
-        desc: "Architecting reliable, high-performance backends and reactive frontends with modern frameworks.",
+        title: "AI & Full-Stack Developer",
+        desc: "Building scalable web apps, RESTful APIs, and AI-powered solutions with React, TypeScript, Node.js, and Firebase.",
         icon: "Layers"
       },
       {
         title: "Product Designer",
-        desc: "Creating intuitive UI layouts, design systems, and delightful user experiences with Figma.",
+        desc: "Designing responsive website layouts for desktop and mobile platforms, focusing on usability, visual consistency, and user experience with Figma.",
         icon: "Palette"
       },
       {
-        title: "Creative Problem Solver",
-        desc: "Combining algorithmic fundamentals, AI RAG workflows, and clean design thinking to build impactful solutions.",
+        title: "Research & Product Innovation",
+        desc: "Passionate about research, emerging technologies, digital twins, and building intelligent solutions that solve real-world problems.",
         icon: "Sparkles"
       }
     ]
@@ -131,27 +142,65 @@ export const PERSONAL_INFO = {
 };
 
 /**
+ * AREAS OF INTEREST
+ * Directly from the official resume
+ */
+export const AREAS_OF_INTEREST: AreaOfInterestItem[] = [
+  {
+    id: "interest-01",
+    title: "Full Stack Development & UI/UX",
+    description: "Designing responsive, intuitive user interfaces and architecting high-throughput, maintainable frontend and backend systems.",
+    icon: "Layers"
+  },
+  {
+    id: "interest-02",
+    title: "AI and Intelligent System",
+    description: "Applying machine learning, Gemini AI LLM reasoning, anomaly detection, and predictive analytics to solve complex challenges.",
+    icon: "Brain"
+  },
+  {
+    id: "interest-03",
+    title: "Product Development and Research Innovation",
+    description: "Iterating from concept to deployment with rapid prototyping, 3D digital twins, and privacy-preserving cyber defense architectures.",
+    icon: "Sparkles"
+  },
+  {
+    id: "interest-04",
+    title: "Database Management",
+    description: "Designing optimized relational schemas, NoSQL document models, and real-time synchronization pipelines with MySQL, PostgreSQL, and Supabase.",
+    icon: "Database"
+  }
+];
+
+/**
  * SKILLS & TECHNOLOGIES
- * STRICT REQUIREMENT: Only skills explicitly mentioned in resume:
- * Languages: Python
- * Frameworks: React, Node.js, Express.js
+ * STRICT REQUIREMENT: Only skills explicitly mentioned in the resume:
+ * Languages: Python, C++
+ * Frameworks: React, Node.js, Express.js, FastAPI
  * Databases: MySQL, Supabase
- * Tools: Git, GitHub, Figma
+ * Tools: PowerBI, Git, GitHub, Figma
  */
 export const SKILLS_DATA: SkillItem[] = [
   // Programming Languages
   {
     name: "Python",
     category: "Programming Languages",
-    description: "Core programming, backend APIs, data handling, and AI/RAG integration",
+    description: "Backend architectures, machine learning models, FastAPI services, and AI data processing",
     docUrl: "https://www.python.org/doc/",
     iconName: "python"
+  },
+  {
+    name: "C++",
+    category: "Programming Languages",
+    description: "Algorithmic problem-solving, high-performance computing, data structures, and system fundamentals",
+    docUrl: "https://en.cppreference.com/",
+    iconName: "cpp"
   },
   // Frameworks
   {
     name: "React",
     category: "Frameworks",
-    description: "Component-driven frontend architecture, hooks, and responsive state management",
+    description: "Component-driven frontend architecture, hooks, and reactive user interfaces",
     docUrl: "https://react.dev/",
     iconName: "react"
   },
@@ -165,9 +214,16 @@ export const SKILLS_DATA: SkillItem[] = [
   {
     name: "Express.js",
     category: "Frameworks",
-    description: "Fast, unopinionated, minimalist web framework for RESTful microservices",
+    description: "Fast, minimalist web framework for RESTful microservices and routing logic",
     docUrl: "https://expressjs.com/",
     iconName: "express"
+  },
+  {
+    name: "FastAPI",
+    category: "Frameworks",
+    description: "High-performance modern Python web framework for asynchronous ML & AI microservices",
+    docUrl: "https://fastapi.tiangolo.com/",
+    iconName: "fastapi"
   },
   // Databases
   {
@@ -185,6 +241,13 @@ export const SKILLS_DATA: SkillItem[] = [
     iconName: "supabase"
   },
   // Tools
+  {
+    name: "PowerBI",
+    category: "Tools",
+    description: "Business intelligence reporting, interactive dashboards, and executive data visualizations",
+    docUrl: "https://powerbi.microsoft.com/",
+    iconName: "powerbi"
+  },
   {
     name: "Git",
     category: "Tools",
@@ -214,14 +277,12 @@ export const WORK_EXPERIENCES: ExperienceItem[] = [
     company: "Create Digital Solutions",
     role: "Full Stack Developer Intern",
     location: "Coimbatore, Tamil Nadu",
-    duration: "June 2025 – November 2025",
+    duration: "Jun 2025 – Nov 2025",
     description:
-      "Architected a scalable POS and inventory management platform using Next.js, React, and Supabase, implementing optimized billing workflows, automated GST calculation, UPI QR payments, and real-time inventory tracking.",
+      "Architected a scalable POS and inventory management platform using Next.js, React, and Supabase implementing optimized billing workflows, automated GST calculation, UPI QR payments, and real-time inventory tracking.",
     responsibilities: [
-      "Engineered role-based access control (RBAC) to enforce secure multi-tiered permissions across cashiers, managers, and system administrators.",
-      "Built automated real-time low-stock alerts and proactive replenishment notifications to eliminate stockouts.",
-      "Implemented comprehensive customer loyalty, credit management, and recurring balance tracking.",
-      "Developed automated WhatsApp receipt delivery integration enabling a streamlined, paperless checkout experience."
+      "Architected a scalable POS and inventory management platform using Next.js, React, and Supabase implementing optimized billing workflows, automated GST calculation, UPI QR payments, and real-time inventory tracking.",
+      "Engineered RBAC, low-stock alerts, customer loyalty and credit management, and automated WhatsApp receipts, enabling a streamlined, paperless checkout experience."
     ],
     tags: [
       "Next.js",
@@ -229,49 +290,53 @@ export const WORK_EXPERIENCES: ExperienceItem[] = [
       "Supabase",
       "POS",
       "Inventory Management",
-      "GST",
-      "UPI Payments"
+      "GST Calculation",
+      "UPI Payments",
+      "RBAC",
+      "WhatsApp Receipts"
     ],
-    companyUrl: "https://createdigital.in" // optional fallback
+    companyUrl: "https://createdigital.in"
   },
   {
     id: "exp-02",
     company: "Snippet Script",
     role: "Product Designer",
-    duration: "January 2026 – March 2026",
+    duration: "Jan 2026 – Mar 2026",
     description:
       "Designed responsive website layouts for desktop and mobile platforms, focusing on usability, visual consistency, and user experience.",
     responsibilities: [
-      "Created and iterated on UI/UX designs and high-fidelity prototypes in Figma, incorporating feedback and usability considerations.",
-      "Established cohesive typographic scales, component color libraries, and responsive grid layouts.",
-      "Conducted user experience evaluations and simplified navigation structures for enhanced digital product conversion."
+      "Designed responsive website layouts for desktop and mobile platforms, focusing on usability, visual consistency, and user experience.",
+      "Created and iterated on UI/UX designs and prototypes, incorporating design improvements based on feedback and usability considerations."
     ],
     tags: [
       "UI/UX Design",
-      "Responsive Design",
+      "Figma",
+      "Responsive Layouts",
+      "User Experience",
       "Prototyping",
-      "User Experience"
+      "Design Systems"
     ]
   },
   {
     id: "exp-03",
-    company: "TIA IT",
+    company: "TIA",
     role: "Full Stack Developer Intern",
-    location: "Coimbatore, India",
-    duration: "March 2024 – May 2024",
+    location: "Coimbatore, Tamil Nadu",
+    duration: "Mar 2024 – May 2024",
     description:
-      "Developed 12+ RESTful APIs using Node.js, Express.js, MongoDB, and JOI for an internal course and faculty management tool, implementing scalable backend architecture and schema validation.",
+      "Developed responsive web application features using Node.js, Express.js, and MongoDB, designing RESTful APIs and securing user access with JWT authentication.",
     responsibilities: [
-      "Developed 12+ RESTful APIs using Node.js, Express.js, MongoDB, and JOI for an internal course and faculty management tool, implementing scalable backend architecture and schema validation.",
-      "Optimized secure JWT-authenticated APIs while collaborating with an 8-member cross-functional team using Git for version control and code collaboration."
+      "Developed responsive web application features using Node.js, Express.js, and MongoDB.",
+      "Designed and implemented RESTful APIs to enable seamless communication between frontend and backend systems.",
+      "Integrated JWT-based authentication and Joi validation to ensure secure user access and data integrity."
     ],
     tags: [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "REST APIs",
-      "JWT",
-      "JOI",
+      "RESTful APIs",
+      "JWT Authentication",
+      "Joi Validation",
       "Git"
     ]
   }
@@ -280,11 +345,11 @@ export const WORK_EXPERIENCES: ExperienceItem[] = [
 export const FEATURED_PROJECTS: ProjectItem[] = [
   {
     id: "techno-tenant",
-    title: "Techno Tenant",
-    category: "Full Stack Development",
-    tagline: "Intelligent Property & Rent Management Dashboard",
+    title: "TechnoTenant",
+    category: "Full Stack & Cloud PWA",
+    tagline: "Property & Rent Management Dashboard",
     description:
-      "Developed a property and rent management application enabling landlords to manage properties, tenants, rent collections, pending balances, expenses, and real-time financial analytics through an interactive dashboard.",
+      "Developed a property and rent management application enabling landlords to manage multiple properties, tenants, rent collections, pending balances, expenses, and financial analytics through an interactive dashboard.",
     toolsUsed: [
       "React",
       "TypeScript",
@@ -294,12 +359,10 @@ export const FEATURED_PROJECTS: ProjectItem[] = [
       "Progressive Web App (PWA)"
     ],
     features: [
-      "Multi-property and unit configuration with real-time occupancy status indicators",
-      "Automated rent collection tracking, payment schedules, and instant receipt generation",
-      "Pending balance alerts and automated tenant payment reminder notifications",
-      "Granular expense tracking categorization and net cash flow financial analytics",
-      "Progressive Web App (PWA) architecture ensuring offline access and native-like mobile installability",
-      "Secure role-based access with Firebase Authentication and Cloud Firestore security rules"
+      "Developed a property and rent management application enabling landlords to manage multiple properties, tenants, rent collections, pending balances, expenses, and financial analytics through an interactive dashboard",
+      "Implemented tenant-wise payment tracking, partial rent payments, maintenance expense management, and real-time financial summaries to simplify day-to-day rental operations",
+      "Integrated Firebase Authentication, Cloud Firestore real-time synchronization, and Firebase Hosting",
+      "Designed Progressive Web App (PWA) technologies ensuring offline availability, fast load speeds, and cross-platform installation"
     ],
     githubUrl: CONFIG.TECHNO_TENANT_GITHUB,
     liveDemoUrl: CONFIG.TECHNO_TENANT_DEMO,
@@ -307,31 +370,82 @@ export const FEATURED_PROJECTS: ProjectItem[] = [
     image: "/images/techno-tenant.png"
   },
   {
-    id: "adaptive-vehicle-guide",
-    title: "Adaptive Vehicle Guide",
-    category: "AI / RAG / Full Stack Development",
-    tagline: "Multi-Hop Agentic AI Advisor & Diagnostics",
+    id: "city-twin",
+    title: "City Twin",
+    category: "3D Digital Twin & AI/ML",
+    tagline: "Underground Infrastructure 3D Visualization & Anomaly Detection",
     description:
-      "Developed AutoRAG, an adaptive vehicle service and troubleshooting advisor that handles simple, medium, and complex queries using direct LLM generation, single-step RAG, and agentic multi-hop RAG.",
+      "Developed an interactive 3D digital twin platform to visualize underground utility networks, monitor IoT sensor data, detect infrastructure anomalies using AI/ML, and simulate scenarios through AR/VR.",
     toolsUsed: [
-      "Python",
-      "FastAPI",
       "React",
       "TypeScript",
-      "pgvector",
-      "NVIDIA NIM API",
-      "Mem0"
+      "3D Visualization",
+      "IoT Sensors",
+      "AI/ML",
+      "AR/VR",
+      "Digital Twin Technology"
     ],
     features: [
-      "Adaptive Query Routing: Dynamically categorizes customer vehicle symptoms into direct LLM, single-step semantic retrieval, or multi-hop agentic search",
-      "Agentic Multi-Hop RAG: Deconstructs complex multi-symptom mechanical faults into iterative reasoning sub-queries with verifiable citations",
-      "Vector Embeddings with pgvector: High-speed semantic similarity matching against OEM technical service manuals and diagnostic diagrams",
-      "Contextual Memory via Mem0: Preserves vehicle history, previous repairs, and driver driving profiles across conversational sessions",
-      "FastAPI High-Throughput Service: Async streaming response endpoints integrated with NVIDIA NIM API inference acceleration",
-      "Interactive Diagnostics UI: Live vehicle health gauges, diagnostic tree visualization, and step-by-step repair guides"
+      "Developed an interactive 3D digital twin platform to visualize underground utility networks in high spatial fidelity",
+      "Integrated real-time IoT sensor telemetry monitoring across pressure, flow rate, and subterranean structural indicators",
+      "Engineered AI/ML anomaly detection models to detect infrastructure anomalies and mitigate potential utility hazards",
+      "Implemented scenario simulations through AR/VR for immersive field inspections and data-driven infrastructure management"
     ],
-    githubUrl: CONFIG.ADAPTIVE_VEHICLE_GUIDE_GITHUB,
-    liveDemoUrl: CONFIG.ADAPTIVE_VEHICLE_GUIDE_DEMO,
+    githubUrl: CONFIG.CITY_TWIN_GITHUB,
+    liveDemoUrl: CONFIG.CITY_TWIN_DEMO,
+    hasCustomMockup: true
+  },
+  {
+    id: "student-academic-analytics",
+    title: "Student Academic Performance Analytics Platform",
+    category: "AI & Predictive Analytics",
+    tagline: "ML Backlog Risk Prediction & Gemini-Powered Academic Advisor",
+    description:
+      "Developed an academic analytics platform to monitor student performance, identify learning gaps, predict examination outcomes, and generate early warning alerts through interactive dashboards.",
+    toolsUsed: [
+      "Python",
+      "React",
+      "FastAPI",
+      "Scikit-learn",
+      "SQLite",
+      "Google Gemini API"
+    ],
+    features: [
+      "Processed an extensive dataset covering 2,000 students and 15,000 academic records for multi-semester performance analytics",
+      "Implemented Random Forest models achieving 93.4% accuracy in backlog risk classification and examination outcome forecasting",
+      "Integrated a Gemini-powered AI academic advisor for conversational guidance, personalized study recommendations, and tailored intervention strategies",
+      "Designed real-time early warning alert dashboards to help educators identify learning gaps and support data-driven academic decisions"
+    ],
+    githubUrl: CONFIG.STUDENT_ANALYTICS_GITHUB,
+    liveDemoUrl: CONFIG.STUDENT_ANALYTICS_DEMO,
+    hasCustomMockup: true
+  },
+  {
+    id: "privasec",
+    title: "PRIVASEC – Cyber Defense Platform",
+    category: "Cybersecurity & Intelligent Systems",
+    tagline: "Privacy-Preserving Intelligent Defense & PII Anomaly Detection",
+    description:
+      "Developed an integrated cyber-defense platform featuring automated PII detection and masking, ML-based anomaly detection using Isolation Forest, risk scoring, adaptive MFA, and incident response.",
+    toolsUsed: [
+      "React",
+      "TypeScript",
+      "Python (FastAPI)",
+      "PostgreSQL",
+      "Redis",
+      "Scikit-learn",
+      "Microsoft Presidio",
+      "AES-256-GCM",
+      "Docker"
+    ],
+    features: [
+      "Automated sensitive PII detection and real-time masking using Microsoft Presidio and cryptographic AES-256-GCM encryption",
+      "Engineered ML-based anomaly detection using Isolation Forest for behavioral deviation and threat detection",
+      "Implemented dynamic risk scoring engine triggering adaptive multi-factor authentication (MFA) and automated incident response",
+      "Developed high-throughput asynchronous services using Python (FastAPI), PostgreSQL, Redis caching, and Docker containerization"
+    ],
+    githubUrl: CONFIG.PRIVASEC_GITHUB,
+    liveDemoUrl: CONFIG.PRIVASEC_DEMO,
     hasCustomMockup: true
   }
 ];
@@ -346,7 +460,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   },
   {
     id: "ach-02",
-    title: "Winner — HackVerse 5.0 (Avalanche Track)",
+    title: "Winner – HackVerse 5.0 (Avalanche Track)",
     organization: "NITK, Surathkal",
     location: "Surathkal, Karnataka",
     year: "HackVerse 5.0",
@@ -354,7 +468,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   },
   {
     id: "ach-03",
-    title: "Runner Up — CryptoShield 2k24 Hackathon",
+    title: "Runner-Up – CryptoShield 2k24 Hackathon",
     organization: "Amrita Vishwa Vidyapeetham",
     location: "Chennai, Tamil Nadu",
     year: "2024",
@@ -362,9 +476,9 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   },
   {
     id: "ach-04",
-    title: "Winner — Altruisty Design Challenge",
+    title: "Winner – Altruisty Design Challenge",
     organization: "Altruisty",
-    year: "Design Excellence",
+    year: "Design Challenge",
     type: "award"
   }
 ];
@@ -395,21 +509,28 @@ export const LEADERSHIP_POSITIONS: LeadershipItem[] = [
     id: "lead-01",
     organization: "Google Developer Groups, CIT",
     position: "Secretary",
-    duration: "December 2025 – June 2026",
-    focus: "Leading executive operations, technical developer summits, workshop schedules, and student developer outreach."
+    duration: "Dec 2025 – June 2026",
+    focus: "Coordinated club activities, managed team operations, and supported the planning and execution of technical events and community initiatives."
   },
   {
     id: "lead-02",
     organization: "Google Developer Groups, CIT",
     position: "Design Lead",
-    duration: "September 2025 – November 2025",
-    focus: "Directing the visual design language, event branding assets, UI collateral, and creative promotional campaigns."
+    duration: "Sep 2025 – Nov 2025",
+    focus: "Led creative design initiatives and visual content creation for event promotions, social media, and club branding."
   },
   {
     id: "lead-03",
     organization: "Student Developers Cell, CIT",
     position: "Digital Illustrator",
-    duration: "September 2024 – August 2025",
-    focus: "Creating vector graphics, digital editorial illustrations, and interactive visual storyboards for campus software products."
+    duration: "Sep 2024 – Aug 2025",
+    focus: "Created digital illustrations and visual assets for technical events, promotional materials, and student activities."
+  },
+  {
+    id: "lead-04",
+    organization: "EBSB Club, CIT",
+    position: "Creative Head",
+    duration: "Sep 2024 – Aug 2025",
+    focus: "Managed creative initiatives for club events, cultural activities, and promotional campaigns."
   }
 ];

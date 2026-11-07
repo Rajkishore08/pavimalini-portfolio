@@ -54,11 +54,11 @@ export default function Hero() {
 
             {/* Main Heading with Sky Blue Gradient Highlight */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#070e1b] font-display tracking-tight leading-[1.12] mb-6">
-              Designing experiences.{' '}
+              {PERSONAL_INFO.hero.headingMain}{' '}
               <span className="bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#0284c7] bg-clip-text text-transparent">
-                Building meaningful
+                {PERSONAL_INFO.hero.headingHighlight}
               </span>{' '}
-              digital products.
+              {PERSONAL_INFO.hero.headingEnd}
             </h1>
 
             {/* Subheading with high-contrast readable navy */}

@@ -131,7 +131,7 @@ export default function About() {
                     Focus
                   </span>
                   <span className="text-xs sm:text-sm font-mono font-bold text-[#0284c7] text-right">
-                    Full Stack &amp; UI Systems
+                    AI &amp; Full-Stack Development
                   </span>
                 </div>
               </div>

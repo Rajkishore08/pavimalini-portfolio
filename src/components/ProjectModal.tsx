@@ -4,8 +4,7 @@ import React, { useEffect } from 'react';
 import { ProjectItem } from '@/data/portfolioData';
 import { X, ExternalLink, CheckCircle2, Layers, Sparkles } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
-import ProjectMockupDashboard from './ProjectMockupDashboard';
-import ProjectMockupAutoRAG from './ProjectMockupAutoRAG';
+import { renderProjectMockup } from './Projects';
 
 interface ProjectModalProps {
   project: ProjectItem | null;
@@ -79,11 +78,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Embedded Interactive Visual Mockup */}
         <div className="rounded-2xl overflow-hidden border border-[#bae6fd] bg-[#f0f9ff]">
-          {project.id === 'techno-tenant' ? (
-            <ProjectMockupDashboard />
-          ) : (
-            <ProjectMockupAutoRAG />
-          )}
+          {renderProjectMockup(project.id)}
         </div>
 
         {/* Project Description */}
